@@ -20,13 +20,6 @@ print(MONGO_DB_URL)
 class NetworkDataExtract():
     def __init__(self):
         try:
-            # self.mongo_uri = os.getenv("MONGO_URI")
-            # self.mongo_db = os.getenv("MONGO_DB")
-            # self.mongo_collection = os.getenv("MONGO_COLLECTION")
-            # self.client = MongoClient(self.mongo_uri, tlsCAFile=certifi.where())
-            # self.db = self.client[self.mongo_db]
-            # self.collection = self.db[self.mongo_collection]
-            # logging.info("MongoDB connection established successfully")
             pass
         except Exception as e:
             raise NetworkSecurityException(e, sys)
