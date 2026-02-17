@@ -7,6 +7,8 @@ import sys
 
 print(training_pipeline.ARTIFACT_DIR)
 
+print(training_pipeline.PIPELINE_NAME)
+
 
 class TrainingPipelineConfig:
     def __init__(self):
