@@ -14,7 +14,7 @@ from networksecurity.logger import logging
 # Load environment variables first
 load_dotenv()
 
-MONGO_DB_URL = os.getenv("MONGO_URI")
+MONGO_DB_URL = os.getenv("MONGO_DB_URL")
 print(MONGO_DB_URL)
 
 class NetworkDataExtract():
