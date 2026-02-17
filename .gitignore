@@ -28,5 +28,7 @@ htmlcov/
 *.swp
 *.swo
 *.vscode/
+Artifacts/
+logs/
 
     

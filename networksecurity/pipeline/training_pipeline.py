@@ -32,21 +32,32 @@ from networksecurity.entity.artifact_entity import (
     ModelPusherArtifact
 )
 
-from networksecurity.cloud.s3_syncer import S3Sync
-from networksecurity.constant.training_pipeline import TRAINING_BUCKET_NAME
-from networksecurity.constant.training_pipeline import SAVED_MODEL_DIR
+# from networksecurity.cloud.s3_syncer import S3Sync
+# from networksecurity.constant.training_pipeline import TRAINING_BUCKET_NAME
+# from networksecurity.constant.training_pipeline import SAVED_MODEL_DIR
 
 
 class TrainingPipeline:
     def __init__(self):
-        try:
-           pass
-        except Exception as e:
-            raise NetworkSecurityException(e, sys)
+        self.training_pipeline_config = TrainingPipelineConfig()
+       
+           
+        
         
     def start_data_ingestion(self):
         try:
-            pass
+            self.data_ingestion_config = DataIngestionConfig(training_pipeline_config 
+                                                             =self.training_pipeline_config)
+            logging.info("Starting data ingestion")
+            data_ingestion=DataIngestion(data_ingestion_config=self.data_ingestion_config)
+            data_ingestion_artifact=data_ingestion.initiate_data_ingestion()
+
+
+            logging.info(f"Data ingestion completed and artifact: {data_ingestion_artifact}")
+
+            return data_ingestion_artifact
+
+           
         except Exception as e:
             raise NetworkSecurityException(e, sys)
         
@@ -83,7 +94,9 @@ class TrainingPipeline:
 
     def run_pipeline(self):
         try:
-            pass
+            data_ingestion_artifact=self.start_data_ingestion()
+
+            print(f"Data Ingestion artifact: {data_ingestion_artifact}")
         except Exception as e:
             raise NetworkSecurityException(e, sys)
         
