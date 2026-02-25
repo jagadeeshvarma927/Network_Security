@@ -3,6 +3,12 @@ import sys
 import numpy as np
 import pandas as pd
 
+
+from datetime import datetime
+
+# Project root directory
+# PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 """
 Defining common constant variable for the training pipeline
 """
@@ -18,7 +24,8 @@ TEST_FILE_NAME: str = "test.csv"
 
 PREPROCESSING_OBJECT_FILE_NAME = "preprocessing.pkl"
 MODEL_FILE_NAME = "model.pkl"
-SCHEMA_FILE_PATH = os.path.join("data_schema", "schema.yaml")
+SCHEMA_FILE_PATH = os.path.join( "data_schema", "schema.yaml")
+# SCHEMA_FILE_PATH = os.path.join("data_schema", "schema.yaml")
 SCHEMA_DROP_COLS = "drop_columns"
 SAVED_MODEL_DIR =os.path.join("saved_models")
 
