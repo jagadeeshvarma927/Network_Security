@@ -9,4 +9,8 @@ pyyaml
 dill
 xgboost
 fastapi
+uvicorn
+ipykernel
+apache-airflow
+dvc
 # -e .
